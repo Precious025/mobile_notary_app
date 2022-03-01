@@ -14,24 +14,25 @@ class Sliders extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Image(image: AssetImage(logo!)),
-            const SizedBox(height: 25),
-            Text(
-              description!,
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 25),
-            // image given in slider
-            Image(image: AssetImage(image!)),
-            const SizedBox(height: 25),
-          ],
-        ),
+    return SafeArea(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Image(image: AssetImage(logo!)),
+          const SizedBox(height: 25),
+          Text(
+            description!,
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 25),
+          // image given in slider
+          Image.asset(
+            image!,
+            fit: BoxFit.scaleDown,
+          ),
+          const SizedBox(height: 25),
+        ],
       ),
     );
   }
